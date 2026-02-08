@@ -35,17 +35,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		2523E7422F37D27F00869C5E /* Exceptions for "Video" folder in "Video" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				bubbles2.mov,
-			);
-			target = 2523E7132F37D00400869C5E /* Video */;
-		};
 		2523E7432F37D27F00869C5E /* Exceptions for "Video" folder in "VideoTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				bubbles2.mov,
+				bubble.mov,
 			);
 			target = 2523E7202F37D00600869C5E /* VideoTests */;
 		};
@@ -55,7 +48,6 @@
 		2523E7162F37D00400869C5E /* Video */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				2523E7422F37D27F00869C5E /* Exceptions for "Video" folder in "Video" target */,
 				2523E7432F37D27F00869C5E /* Exceptions for "Video" folder in "VideoTests" target */,
 			);
 			path = Video;
