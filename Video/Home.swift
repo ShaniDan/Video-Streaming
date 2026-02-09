@@ -7,18 +7,17 @@
 
 import SwiftUI
 import AVKit
+import AVFoundation
 
 struct Home: View {
-    // I'm explicitly telling Swift - this is an array of Strings
-    @State var likedList: [String] = []
-    @State var isLiked = false
-    
-    @State var player = AVPlayer(
-        url: (Bundle.main.url(
-            forResource: "bubble",
-            withExtension: "mov"
-        ) ?? URL(fileURLWithPath: "/dev/null"))
-    )
+    @State private var likedList: [URL] = []
+    @State private var isLiked = false
+    @State private var player: AVPlayer?
+
+    private let videoURL: URL = {
+        Bundle.main.url(forResource: "bubble", withExtension: "mov")
+        ?? URL(fileURLWithPath: "/dev/null")
+    }()
     
     var body: some View {
         NavigationStack {
@@ -28,8 +27,7 @@ struct Home: View {
                     .frame(width: 350, height: 200, alignment: .center)
                 HStack {
                     Button(action: {
-                        isLiked.toggle()
-                        addLiked()
+                        toggleLike()
                     }) {
                         Image(systemName: isLiked ? "hand.thumbsup.fill" : "hand.thumbsup")
                             .foregroundStyle(isLiked ? .white : .white)
@@ -38,25 +36,44 @@ struct Home: View {
                 }
                 .padding(EdgeInsets(top: 120, leading: 310, bottom: 200, trailing: 10))
             }
-
-            ForEach(likedList, id: \.self) { name in
-                Text(name)
-                Text("bubble is added")
+            
+            NavigationLink("Main", destination: Main())
+            
+            Text("Count: \(likedList.count)")
+            // MARK: this needs to be in new SwiftUI view
+            ForEach(likedList, id: \.self) { url in
+                VideoPlayer(player: AVPlayer(url: url))
+                    .frame(width: 350, height: 200, alignment: .center)
             }
         }
-        
+        .task {
+            self.player = AVPlayer(url: videoURL)
+        }
     }
     
-    // function that adds the video to the liked list
-    func addLiked() {
-        likedList.append("Some name")
-        
-        if !likedList.contains("bubble.mov") {
-            likedList.append("bubble.mov")
+    // this function is used only inside this struct
+    // LikedList videothumbnails with a title
+    private func toggleLike() {
+        isLiked.toggle()
+        if isLiked {
+            likedList.append(videoURL)
+        }
+        else {
+            likedList.removeAll { $0 == videoURL }
         }
     }
 }
 
 #Preview {
     Home()
+}
+
+struct SampleVideo: Equatable, Identifiable {
+    // This is a computed property because it has a body and it doesn't store anything
+    var id: URL {
+        self.url
+    }
+    // url is stored property
+    var url: URL
+    var avPlayer: AVPlayer
 }

@@ -6,11 +6,16 @@
 //
 
 import Testing
+import AVKit
 
 struct VideoTests {
 
     @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+        let avPlayer1 = AVPlayer()
+        let avPlayer2 = avPlayer1
+        
+        #expect(avPlayer1 == avPlayer2)
+        
     }
 
 }
