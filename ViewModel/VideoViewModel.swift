@@ -11,11 +11,15 @@ import Combine
 @MainActor
 
 class VideoViewModel: ObservableObject {
+    // why does it need to be an array
+//    @Published var videos: [VideoResponse] = []
+    @Published var videos: VideoResponse? = nil
     
-    @Published var videos: [VideoModel] = []
+    let imdbIDs = ["tt27497448","tt33517752","tt21066182","tt27444205","tt14786934"]
     
     func fetch() async {
-        guard let url = URL(string: "https://vidsrc.icu/embed/movie/{id}") else {
+        
+        guard let url = URL(string: "https://vidsrc.icu/embed/movie") else {
             return
         }
         // decode
@@ -28,13 +32,19 @@ class VideoViewModel: ObservableObject {
             let statusCode = httpResponse.statusCode
             
             if statusCode == 200 {
-                let decoded = try JSONDecoder().decode([VideoModel].self, from: data)
+                let decoded = try JSONDecoder().decode(VideoResponse.self, from: data)
+                //
+                print(decoded)
+                
                 self.videos = decoded
             } else if statusCode == 404 {
                 
+            } else {
+                print("nothing found here")
             }
+            // currently it's catching this error
         } catch {
-            print("no videos")
+            print("Error: \(error)")
         }
     }
 }

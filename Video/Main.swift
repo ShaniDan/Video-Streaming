@@ -6,16 +6,22 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct Main: View {
     
     @StateObject var vm = VideoViewModel()
+    @State private var player: AVPlayer?
     
     var body: some View {
         VStack {
-            ForEach(vm.videos, id: \.url) { item in
-                Text(item.title)
+            if let video = vm.videos {
+                Text(video.title)
             }
+        }
+        
+        .task {
+          await vm.fetch()
         }
     }
 }

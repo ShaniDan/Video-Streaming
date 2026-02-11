@@ -7,35 +7,39 @@
 
 import Foundation
 
-struct VideoModel: Codable {
-    // this is a stored property because it holds a value in memory
-    var title: String
-    var description: String
-    var url: String
-    var content: String
-    var metadata: MetaData
-    
+struct VideoResponse: Decodable {
+    let title: String
+    let description: String
+    let url: URL
+    let content: String
+    let metadata: VideoMetadata
+    let external: External
+    let warning: String
 }
 
-struct MetaData: Codable {
-    var lang: String
-    var viewport: String
-    var description: String
-    var author: String
+struct VideoMetadata: Decodable {
+    let lang: String
+    let viewport: String
+    let description: String
+    let author: String
 }
 
-struct External {
-    var icon: [String: IconValue]
-    var dnsPrefetch: [String: EmptyObject]
-    
+struct External: Decodable {
+   
+    let icon: [URL: IconInfo]
+
+    /// Key name contains a hyphen, and values are empty objects: { "https://.../": {} }
+    let dnsPrefetch: [URL: EmptyObject]
+
     enum CodingKeys: String, CodingKey {
-        case ison
+        case icon
         case dnsPrefetch = "dns-prefetch"
     }
 }
 
-struct IconValue: Codable {
-    var type: String
+struct IconInfo: Decodable {
+    let type: String
 }
 
-struct EmptyObject: Codable {}
+/// Represents `{}` in JSON
+struct EmptyObject: Decodable {}
