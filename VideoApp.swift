@@ -11,7 +11,7 @@ import SwiftUI
 struct VideoApp: App {
     var body: some Scene {
         WindowGroup {
-            Home()
+            Sample1()
         }
     }
 }

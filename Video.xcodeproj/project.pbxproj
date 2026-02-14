@@ -10,6 +10,7 @@
 		2523E7182F37D00400869C5E /* VideoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523E7172F37D00400869C5E /* VideoApp.swift */; };
 		2523E7472F3A869000869C5E /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523E7462F3A869000869C5E /* VideoModel.swift */; };
 		2523E74A2F3A8A8200869C5E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2523E7492F3A8A8200869C5E /* VideoViewModel.swift */; };
+		25E79D832F3E883900DA56DF /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 25E79D822F3E883900DA56DF /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		2523E72B2F37D00600869C5E /* VideoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2523E7462F3A869000869C5E /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		2523E7492F3A8A8200869C5E /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		25E79D822F3E883900DA56DF /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -46,12 +48,20 @@
 			);
 			target = 2523E7202F37D00600869C5E /* VideoTests */;
 		};
+		25E79D852F3E898400DA56DF /* Exceptions for "Video" folder in "Video" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2523E7132F37D00400869C5E /* Video */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2523E7162F37D00400869C5E /* Video */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				25E79D852F3E898400DA56DF /* Exceptions for "Video" folder in "Video" target */,
 				2523E7432F37D27F00869C5E /* Exceptions for "Video" folder in "VideoTests" target */,
 			);
 			path = Video;
@@ -97,6 +107,7 @@
 		2523E70B2F37D00400869C5E = {
 			isa = PBXGroup;
 			children = (
+				25E79D822F3E883900DA56DF /* Config.xcconfig */,
 				2523E7172F37D00400869C5E /* VideoApp.swift */,
 				2523E7452F3A863E00869C5E /* Model */,
 				2523E7482F3A8A6200869C5E /* ViewModel */,
@@ -253,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E79D832F3E883900DA56DF /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +389,7 @@
 		};
 		2523E7342F37D00600869C5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E79D822F3E883900DA56DF /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -431,6 +444,7 @@
 		};
 		2523E7362F37D00600869C5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E79D822F3E883900DA56DF /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -442,6 +456,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Video/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -486,6 +501,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Video/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

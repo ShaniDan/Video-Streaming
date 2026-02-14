@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  Video
+//
+//  Created by Shakhnoza Mirabzalova on 2/12/26.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+API_KEY = AIzaSyADtLS90V5n-2C5Dy2wh_YvZGS-bhZhBpQ
