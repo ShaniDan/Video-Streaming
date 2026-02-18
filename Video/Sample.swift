@@ -24,6 +24,14 @@ struct Sample1: View {
             }
         }
         
+        func performTask() {
+            print("Start task on: \(Thread.current)")
+            // This blocks the main thread
+            let data = doHeavyWork()
+            updateUI(with: data)
+            print("End task on: \(Thread.current)")
+        }
+        
 //        VStack {
 //            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
 //        }
