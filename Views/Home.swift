@@ -37,8 +37,6 @@ struct Home: View {
                 .padding(EdgeInsets(top: 120, leading: 310, bottom: 200, trailing: 10))
             }
             
-            NavigationLink("Main", destination: Main())
-            
             Text("Count: \(likedList.count)")
             // MARK: this needs to be in new SwiftUI view
             ForEach(likedList, id: \.self) { url in

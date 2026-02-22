@@ -18,6 +18,28 @@ struct DataService {
         }
         
         // Create the URL
-        let urlString = ""
+        let urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLjODKV8YBFHZ3tfvAgbuXk4zkLgB7CfhY&maxResults=20&key=\(apiKey!)"
+        let url = URL(string: urlString)
+        
+        if let url = url {
+            let request = URLRequest(url: url)
+            let session = URLSession.shared
+            
+            do {
+                let (data, response) = try await session.data(for: request)
+                
+                guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                    throw URLError(.badServerResponse)
+                }
+                
+                let decoder = JSONDecoder()
+                let playlist = try decoder.decode(Playlist.self, from: data)
+                return playlist.items
+                
+            } catch {
+                print("Error message \(error)")
+            }
+        }
+        return [Video]()
     }
 }
