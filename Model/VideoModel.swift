@@ -8,6 +8,7 @@
 import Foundation
 
 struct VideoResponse: Decodable {
+    let title2 = String() // ( () initialize title as String)
     let title: String
     let description: String
     let url: URL

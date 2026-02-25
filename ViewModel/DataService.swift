@@ -7,9 +7,12 @@
 
 import Foundation
 
+// Making DataService an actor protects the cache from simultaneous access from multiple threads
+
 struct DataService {
     
     private let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String
+    private let playlistCache: NSCache<NSString, CacheEntryObject> = NSCache()
     
     func getVideo() async -> [Video] {
         guard apiKey != nil else {
@@ -42,4 +45,12 @@ struct DataService {
         }
         return [Video]()
     }
+    
+//    func playList(from url: URL) async throws -> Playlist {
+//        let task = Task<Playlist, Error> {
+//                   let data = try await downloader.httpData(from: url)
+//                   let location = try decoder.decode(Playlist.self, from: data)
+//                   return location
+//               }
+//    }
 }

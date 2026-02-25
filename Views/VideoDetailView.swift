@@ -46,7 +46,8 @@ struct VideoDetailView: View {
                     )
                 )
                 YouTubePlayerView(youTubePlayer)
-                    .frame(width: proxy.size.width, height: proxy.size.width / 1.77778)
+                    .frame(width: 396, height: 220)
+//                    .frame(width: proxy.size.width, height: proxy.size.width \ 1.77778)
                 
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {

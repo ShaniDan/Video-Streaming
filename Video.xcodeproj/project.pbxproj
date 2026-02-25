@@ -20,6 +20,10 @@
 		25E79D922F4633CA00DA56DF /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E79D912F4633CA00DA56DF /* FeedView.swift */; };
 		25E79D962F478ECD00DA56DF /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E79D952F478ECD00DA56DF /* VideoDetailView.swift */; };
 		25E79D9A2F4795B500DA56DF /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 25E79D992F4795B500DA56DF /* YouTubePlayerKit */; };
+		25E79D9E2F4E1C2400DA56DF /* Algos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E79D9D2F4E1C2400DA56DF /* Algos.swift */; };
+		25E79DA12F4E25B200DA56DF /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 25E79DA02F4E25B200DA56DF /* Algorithms */; };
+		25E79DA32F4E36A700DA56DF /* CacheEntryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E79DA22F4E36A700DA56DF /* CacheEntryObject.swift */; };
+		25E79E622F4E40C800DA56DF /* NSCache+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E79E612F4E40C800DA56DF /* NSCache+Subscript.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,9 @@
 		25E79D8F2F462FC900DA56DF /* VideoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRowView.swift; sourceTree = "<group>"; };
 		25E79D912F4633CA00DA56DF /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		25E79D952F478ECD00DA56DF /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
+		25E79D9D2F4E1C2400DA56DF /* Algos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algos.swift; sourceTree = "<group>"; };
+		25E79DA22F4E36A700DA56DF /* CacheEntryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheEntryObject.swift; sourceTree = "<group>"; };
+		25E79E612F4E40C800DA56DF /* NSCache+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCache+Subscript.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -101,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E79DA12F4E25B200DA56DF /* Algorithms in Frameworks */,
 				25E79D9A2F4795B500DA56DF /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +171,8 @@
 			children = (
 				2523E7492F3A8A8200869C5E /* VideoViewModel.swift */,
 				25E79D882F450B3400DA56DF /* DataService.swift */,
+				25E79DA22F4E36A700DA56DF /* CacheEntryObject.swift */,
+				25E79E612F4E40C800DA56DF /* NSCache+Subscript.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,6 +185,7 @@
 				25E79D8F2F462FC900DA56DF /* VideoRowView.swift */,
 				25E79D912F4633CA00DA56DF /* FeedView.swift */,
 				25E79D952F478ECD00DA56DF /* VideoDetailView.swift */,
+				25E79D9D2F4E1C2400DA56DF /* Algos.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 			name = Video;
 			packageProductDependencies = (
 				25E79D992F4795B500DA56DF /* YouTubePlayerKit */,
+				25E79DA02F4E25B200DA56DF /* Algorithms */,
 			);
 			productName = Video;
 			productReference = 2523E7142F37D00400869C5E /* Video.app */;
@@ -292,6 +304,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				25E79D972F4793CB00DA56DF /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+				25E79D9F2F4E234500DA56DF /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2523E7152F37D00400869C5E /* Products */;
@@ -340,8 +353,11 @@
 				25E79D772F3E717900DA56DF /* Home.swift in Sources */,
 				25E79D892F450B3400DA56DF /* DataService.swift in Sources */,
 				25E79D8D2F46281000DA56DF /* Playlist.swift in Sources */,
+				25E79E622F4E40C800DA56DF /* NSCache+Subscript.swift in Sources */,
 				25E79D872F3E89FC00DA56DF /* Sample.swift in Sources */,
+				25E79D9E2F4E1C2400DA56DF /* Algos.swift in Sources */,
 				2523E7472F3A869000869C5E /* VideoModel.swift in Sources */,
+				25E79DA32F4E36A700DA56DF /* CacheEntryObject.swift in Sources */,
 				25E79D902F462FC900DA56DF /* VideoRowView.swift in Sources */,
 				25E79D8B2F450BA500DA56DF /* Video.swift in Sources */,
 				2523E74A2F3A8A8200869C5E /* VideoViewModel.swift in Sources */,
@@ -739,6 +755,14 @@
 				minimumVersion = 2.0.5;
 			};
 		};
+		25E79D9F2F4E234500DA56DF /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -746,6 +770,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 25E79D972F4793CB00DA56DF /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
 			productName = YouTubePlayerKit;
+		};
+		25E79DA02F4E25B200DA56DF /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25E79D9F2F4E234500DA56DF /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
